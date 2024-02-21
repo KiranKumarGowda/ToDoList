@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="ResponseService" targetNamespace="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="b_soap_InlineSchema2.xsd"/>
+        <generatedXSD location="b_soap_InlineSchema3.xsd"/>
+        <generatedXSD location="b_soap_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_IResponseService" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+<wsdl:types>
+
+
+
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+<xsd:include schemaLocation="b_soap_InlineSchema2.xsd"/>
+    </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NFS.Business.PSService" xmlns:tns="http://schemas.datacontract.org/2004/07/NFS.Business.PSService">
+<xsd:include schemaLocation="b_soap_InlineSchema3.xsd"/>
+    </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/NFS.Business.PSService" schemaLocation="b_soap_InlineSchema3.xsd"/>
+<xsd:include schemaLocation="b_soap_InlineSchema1.xsd"/>
+    </xs:schema>
+    </wsdl:types>
+<wsdl:message name="IResponseService_GetBlazeResponseInternal_InputMessage">
+<wsdl:part element="tns:GetBlazeResponseInternal" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="IResponseService_GetBlazeResponseInternal_OutputMessage">
+<wsdl:part element="tns:GetBlazeResponseInternalResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="IResponseService_GetBlazeResponse_InputMessage">
+<wsdl:part element="tns:GetBlazeResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="IResponseService_GetBlazeResponse_OutputMessage">
+<wsdl:part element="tns:GetBlazeResponseResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:portType name="IResponseService">
+<wsdl:operation name="GetBlazeResponseInternal">
+<wsdl:input message="tns:IResponseService_GetBlazeResponseInternal_InputMessage" wsaw:Action="http://tempuri.org/IResponseService/GetBlazeResponseInternal"/>
+<wsdl:output message="tns:IResponseService_GetBlazeResponseInternal_OutputMessage" wsaw:Action="http://tempuri.org/IResponseService/GetBlazeResponseInternalResponse"/>
+</wsdl:operation>
+<wsdl:operation name="GetBlazeResponse">
+<wsdl:input message="tns:IResponseService_GetBlazeResponse_InputMessage" wsaw:Action="http://tempuri.org/IResponseService/GetBlazeResponse"/>
+<wsdl:output message="tns:IResponseService_GetBlazeResponse_OutputMessage" wsaw:Action="http://tempuri.org/IResponseService/GetBlazeResponseResponse"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="BasicHttpBinding_IResponseService" type="tns:IResponseService">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetBlazeResponseInternal">
+<soap:operation soapAction="http://tempuri.org/IResponseService/GetBlazeResponseInternal" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetBlazeResponse">
+<soap:operation soapAction="http://tempuri.org/IResponseService/GetBlazeResponse" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ResponseService">
+<wsdl:port binding="tns:BasicHttpBinding_IResponseService" name="BasicHttpBinding_IResponseService">
+<soap:address location="http://53.90.43.35/PSService/ResponseService.svc"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
